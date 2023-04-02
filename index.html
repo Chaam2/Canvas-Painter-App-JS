@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Meme Maker</title>
+  </head>
+  <br>
+    <canvas></canvas>
+    선 두께
+    <input id="line-width" type="range" min="1" max="10" value="5" />
+    선 색상
+    <div class="color-pick">
+      <input id="color-picker" type="color" />
+      <div class="palette" style="background-color: #00b894;" data-color="#00b894"></div>
+      <div class="palette" style="background-color: #00cec9;" data-color="#00cec9"></div>
+      <div class="palette" style="background-color: #74b9ff;" data-color="#74b9ff"></div>
+      <div class="palette" style="background-color: #a29bfe;" data-color="#a29bfe"></div>
+      <div class="palette" style="background-color: #fdcb6e;" data-color="#fdcb6e"></div>
+      <div class="palette" style="background-color: #fab1a0;" data-color="#fab1a0"></div>
+      <div class="palette" style="background-color: #ff7675;" data-color="#ff7675"></div>
+      <div class="palette" style="background-color: #fd79a8;" data-color="#fd79a8"></div>
+      <div class="palette" style="background-color: #b2bec3;" data-color="#b2bec3"></div>
+    </div>
+    <button id="mode-btn">Change to Fill</button>
+  
+  <script src="app.js"></script>
+  </body>
+</html>
