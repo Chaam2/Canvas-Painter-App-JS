@@ -7,6 +7,7 @@ canvas.height=800
 //선 두께 변경하기
 const lineWidth = document.querySelector('#line-width')
 ctx.lineWidth = 5 //초기 value
+ctx.lineCap = "round"
 lineWidth.addEventListener('change',changeLineWidth)
 function changeLineWidth(e){
   ctx.lineWidth =e.target.value
@@ -70,6 +71,15 @@ function onFileChange(e){
   img.onload = function(){ //이미지가 로드되었을 때 실행되는 함수
     ctx.drawImage(img,0,0,canvas.width,canvas.height)
   }
+}
+
+//텍스트 스티커 붙이기
+const sticker = document.querySelector('#text-sticker')
+canvas.addEventListener('dblclick',putSticker)
+function putSticker(e){
+  const stickerText = sticker.value
+  ctx.font = lineWidth.value*10 + "px serif"
+  ctx.fillText(stickerText,e.offsetX,e.offsetY)
 }
 
 //캔버스에 라인그리기
