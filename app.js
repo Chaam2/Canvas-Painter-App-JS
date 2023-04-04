@@ -108,3 +108,13 @@ function stopPainting(){
   ctx.beginPath()
 }
 
+//이미지 저장하기
+const saveBtn = document.querySelector('#save-btn')
+saveBtn.addEventListener('click',saveImg)
+function saveImg(){
+  const url = canvas.toDataURL() //이미지를 base64로 인코딩된 URL로 바꿔준다.
+  const a = document.createElement('a')
+  a.href = url
+  a.download = "myDrawing.png" //파일다운로드를 작동시킨다.
+  a.click() //a태그를 클릭하는 동작
+}
