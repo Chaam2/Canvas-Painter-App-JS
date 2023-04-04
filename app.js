@@ -1,8 +1,8 @@
 //캔버스 기본 셋팅
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d') //붓(brush)
-canvas.width=800
-canvas.height=800
+canvas.width=600
+canvas.height=600
 
 //선 두께 변경하기
 const lineWidth = document.querySelector('#line-width')
