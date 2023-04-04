@@ -30,7 +30,6 @@ function pickColor(e){
 }
 //색상 변경하기 - mode
 const modeBtn = document.querySelector('#mode-btn')
-console.log(modeBtn)
 let isFilling = false //false = draw mode, true = fill mode
 modeBtn.addEventListener('click',changeMode)
 function changeMode(){
@@ -43,7 +42,35 @@ function changeMode(){
     modeBtn.innerText = 'Change to Draw'
   }
 }
+//지우기
+const clearBtn = document.querySelector('#clear-btn')
+const eraseBtn = document.querySelector('#erase-btn')
 
+clearBtn.addEventListener('click',clearAll)
+function clearAll(){
+  ctx.fillStyle = 'white'
+  ctx.fillRect(0,0,canvas.width,canvas.height)
+}
+eraseBtn.addEventListener('click',eraser)
+function eraser(){
+  isFilling = false
+  ctx.strokeStyle = 'white'
+  colorPicker.value = '#ffffff'
+  modeBtn.innerText = 'Change to Fill'
+}
+
+//이미지 업로드하기
+const imageFile = document.querySelector('#image-file')
+imageFile.addEventListener('change',onFileChange)
+function onFileChange(e){
+  const file = e.target.files[0]
+  const url = URL.createObjectURL(file) //업로드 파일의 url을 생성한다.
+  const img = new Image()
+  img.src = url
+  img.onload = function(){ //이미지가 로드되었을 때 실행되는 함수
+    ctx.drawImage(img,0,0,canvas.width,canvas.height)
+  }
+}
 
 //캔버스에 라인그리기
 canvas.addEventListener('mousemove',onMove)//마우스 움직일 때 ctx도 따라서 움직이도록
