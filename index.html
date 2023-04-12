@@ -4,38 +4,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link href="//db.onlinewebfonts.com/c/f555c47ffc99d5fbcc445e615749dc38?family=Pixel+NES" rel="stylesheet" type="text/css"/>
     <title>Meme Maker</title>
   </head>
-  <br>
-    <div class="canvas-frame">
-      <img src="imgs/Canvas frame.png"  ondragstart='return false'>
-      <canvas></canvas>
-    </div>
-    <div class="color-pick">
-    선 두께
-    <input id="line-width" type="range" min="1" max="10" value="5" />
-    선 색상
-      <input id="color-picker" type="color" />
-      <div class="palette" style="background-color: #00b894;" data-color="#00b894"></div>
-      <div class="palette" style="background-color: #00cec9;" data-color="#00cec9"></div>
-      <div class="palette" style="background-color: #74b9ff;" data-color="#74b9ff"></div>
-      <div class="palette" style="background-color: #a29bfe;" data-color="#a29bfe"></div>
-      <div class="palette" style="background-color: #fdcb6e;" data-color="#fdcb6e"></div>
-      <div class="palette" style="background-color: #fab1a0;" data-color="#fab1a0"></div>
-      <div class="palette" style="background-color: #ff7675;" data-color="#ff7675"></div>
-      <div class="palette" style="background-color: #fd79a8;" data-color="#fd79a8"></div>
-      <div class="palette" style="background-color: #b2bec3;" data-color="#b2bec3"></div>
-    </div>
+
+  <div class="tools">
     <div class="buttons">
       <button id="mode-btn">Change to Fill</button>
       <button id="clear-btn">Clear</button>
       <button id="erase-btn">Eraser</button>
       <label for="image-file">Upload Img
-      <input id="image-file" type="file" accept="image/*"/></label>
-      <button id="save-btn">Save</button>
-      <input id="text-sticker" type="text" placeholder="입력 후 붙일 곳에 더블클릭!"/>
+        <input id="image-file" type="file" accept="image/*"/></label>
+        <button id="save-btn">Save</button>
+        <input id="text-sticker" type="text" placeholder="Text Sticker"/>
+      </div>
+    <div class="color-pick">
+      <input id="line-width" type="range" min="1" max="10" value="5" />
+      <div class="palettes">
+        <input id="color-picker" type="color" value="#c1a5d6" />
+        <div class="palette" style="background-color: #00b894;" data-color="#00b894"></div>
+        <div class="palette" style="background-color: #00cec9;" data-color="#00cec9"></div>
+        <div class="palette" style="background-color: #74b9ff;" data-color="#74b9ff"></div>
+        <div class="palette" style="background-color: #a29bfe;" data-color="#a29bfe"></div>
+        <div class="palette" style="background-color: #fdcb6e;" data-color="#fdcb6e"></div>
+        <div class="palette" style="background-color: #fab1a0;" data-color="#fab1a0"></div>
+        <div class="palette" style="background-color: #ff7675;" data-color="#ff7675"></div>
+        <div class="palette" style="background-color: #fd79a8;" data-color="#fd79a8"></div>
+        <div class="palette" style="background-color: #b2bec3;" data-color="#b2bec3"></div>
+      </div>
     </div>
   
+  </div>
+    
+    <div class="canvas-frame">
+      <img src="imgs/Canvas frame.png"  ondragstart='return false'>
+      <canvas></canvas>
+    </div>
+
   <script src="app.js"></script>
   </body>
 </html>

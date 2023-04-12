@@ -14,6 +14,7 @@ function changeLineWidth(e){
 }
 
 //색상 변경하기 - picker
+ctx.strokeStyle ="#c1a5d6"
 const colorPicker = document.querySelector('#color-picker')
 colorPicker.addEventListener('change',changeColor)
 function changeColor(e){
@@ -36,11 +37,11 @@ modeBtn.addEventListener('click',changeMode)
 function changeMode(){
   if(isFilling){
     isFilling = false
-    modeBtn.innerText = 'Change to Fill'
+    modeBtn.innerText = 'Draw mode'
   }
   else{
     isFilling = true
-    modeBtn.innerText = 'Change to Draw'
+    modeBtn.innerText = 'Fill mode'
   }
 }
 //지우기
@@ -57,7 +58,7 @@ function eraser(){
   isFilling = false
   ctx.strokeStyle = 'white'
   colorPicker.value = '#ffffff'
-  modeBtn.innerText = 'Change to Fill'
+  modeBtn.innerText = 'Draw mode'
 }
 
 //이미지 업로드하기
@@ -78,7 +79,7 @@ const sticker = document.querySelector('#text-sticker')
 canvas.addEventListener('dblclick',putSticker)
 function putSticker(e){
   const stickerText = sticker.value
-  ctx.font = lineWidth.value*10 + "px serif"
+  ctx.font = lineWidth.value*10 + "px DungGeunMo"
   ctx.fillText(stickerText,e.offsetX,e.offsetY)
 }
 
