@@ -50,8 +50,10 @@ const eraseBtn = document.querySelector('#erase-btn')
 
 clearBtn.addEventListener('click',clearAll)
 function clearAll(){
-  ctx.fillStyle = 'white'
-  ctx.fillRect(0,0,canvas.width,canvas.height)
+  if (confirm("⚠️ 모든 그림을 삭제합니다!")) {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
 }
 eraseBtn.addEventListener('click',eraser)
 function eraser(){
