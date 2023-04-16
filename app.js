@@ -118,6 +118,9 @@ function saveImg(){
   const url = canvas.toDataURL() //이미지를 base64로 인코딩된 URL로 바꿔준다.
   const a = document.createElement('a')
   a.href = url
-  a.download = "myDrawing.png" //파일다운로드를 작동시킨다.
-  a.click() //a태그를 클릭하는 동작
+  const filename = window.prompt('✏️ 저장할 이름을 입력하세요','myDrawing')
+  if(filename){
+    a.download = filename+'.png' //파일다운로드를 작동시킨다.
+    a.click() //a태그를 클릭하는 동작
+  }
 }
