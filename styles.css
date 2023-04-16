@@ -15,6 +15,7 @@ body{
   background-image: url(./imgs/background2.png);
   background-size: cover;
   background-repeat: no-repeat;
+  cursor: url(./imgs/cursor/pen.png)0 26,auto;
 }
 
 .canvas-frame{
@@ -55,11 +56,11 @@ body{
 }
 #line-width[type=range]{
   -webkit-appearance: none;
-  cursor: pointer;
   border-radius: 16px;
   background-color: #ffdaee;
   border: 2px solid #C1A5D6;
   height: 8px;
+  cursor: url(./imgs/cursor/default.png)0 0,auto;
 }
 #line-width[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -68,6 +69,7 @@ body{
   width: 18px;
   height: 18px;
   border-radius: 16px;
+  cursor: url(./imgs/cursor/default.png)0 0,auto;
 }
 
 .palette{
@@ -76,6 +78,10 @@ body{
   margin: 2px;
   border-radius: 4px;
   border: 2px solid #C1A5D6;
+}
+.palette:hover{
+  cursor: url(./imgs/cursor/default.png)0 0,auto;
+  transform: scale(1.15);
 }
 
 #color-picker{
@@ -134,11 +140,10 @@ input::placeholder {
 }
 button:hover,
 label:hover{
-  cursor: pointer;
   background-image: url(./imgs/button/Hover.png);
+  cursor: url(./imgs/cursor/default.png)0 0,auto;
 }
 button:focus,
 label:focus{
-  cursor: pointer;
   background-image: url(./imgs/button/Focus.png);
 }

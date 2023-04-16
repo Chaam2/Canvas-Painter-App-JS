@@ -25,6 +25,11 @@ function changeColor(e){
 const palette = document.querySelectorAll('.palette')
 palette.forEach(color=>color.addEventListener('click',pickColor))
 function pickColor(e){
+  if(colorPicker.value = '#ffffff'){
+    isFilling = false
+    modeBtn.innerText = 'Draw mode'
+    document.body.style.cursor = 'url(./imgs/cursor/pen.png)0 26,auto'
+  }
   const pickedColor = e.target.dataset.color 
   ctx.strokeStyle = pickedColor
   ctx.fillStyle = pickedColor
@@ -38,10 +43,12 @@ function changeMode(){
   if(isFilling){
     isFilling = false
     modeBtn.innerText = 'Draw mode'
+    document.body.style.cursor = 'url(./imgs/cursor/pen.png)0 26,auto'
   }
   else{
     isFilling = true
     modeBtn.innerText = 'Fill mode'
+    document.body.style.cursor = 'url(./imgs/cursor/paint.png)0 26,auto'
   }
 }
 //지우기
@@ -61,6 +68,7 @@ function eraser(){
   ctx.strokeStyle = 'white'
   colorPicker.value = '#ffffff'
   modeBtn.innerText = 'Draw mode'
+  document.body.style.cursor = 'url(./imgs/cursor/erase.png)0 0,auto'
 }
 
 //이미지 업로드하기
