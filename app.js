@@ -119,6 +119,7 @@ function saveImg(){
   const a = document.createElement('a')
   a.href = url
   const filename = window.prompt('✏️ 저장할 이름을 입력하세요','myDrawing')
+
   if(filename){
     a.download = filename+'.png' //파일다운로드를 작동시킨다.
     a.click() //a태그를 클릭하는 동작
